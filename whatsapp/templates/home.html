@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Chat App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="home-box">
+    <h2>Contacts</h2>
+    {% for user in users %}
+        {% if user[0] != session['user'] %}
+            <a href="/chat/{{ user[0] }}">{{ user[0] }}</a>
+        {% endif %}
+    {% endfor %}
+</div>
+
+</body>
+</html>

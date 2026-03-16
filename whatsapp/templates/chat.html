@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat with {{ user }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+</head>
+<body>
+
+<div class="chat-container">
+
+    <!-- Messages Area -->
+    <div id="messages"></div>
+
+    <!-- Typing Indicator -->
+    <div class="typing" id="typing"></div>
+
+    <!-- Input Area -->
+    <div class="chat-input">
+        <input type="text" id="message" placeholder="Type a message...">
+        <input type="file" id="imageInput" accept="image/*">
+        <button id="sendBtn">Send</button>
+    </div>
+
+    <!-- Hidden Current User -->
+    <input type="hidden" id="username" value="{{ session['user'] }}">
+    <!-- Hidden Chatting User -->
+    <input type="hidden" id="chatUser" value="{{ user }}">
+
+</div>
+
+<script src="/static/script.js"></script>
+<script>
+    // Pass chat user to script
+    const chatUser = document.getElementById("chatUser").value;
+</script>
+
+</body>
+</html>
